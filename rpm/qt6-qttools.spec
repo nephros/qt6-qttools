@@ -302,7 +302,7 @@ popd
 %{_qt6_headerdir}/QtQDocCatchGenerators/
 %{_qt6_headerdir}/QtDesigner/
 %{_qt6_headerdir}/QtDesignerComponents/
-%{_qt6_headerdir}/QtHelp/
+#%%{_qt6_headerdir}/QtHelp/
 %{_qt6_headerdir}/QtUiPlugin
 %{_qt6_headerdir}/QtUiTools/
 %{_qt6_headerdir}/QtTools/
@@ -319,8 +319,8 @@ popd
 %{_qt6_libdir}/cmake/Qt6QDocCatchConversionsPrivate/*.cmake
 %dir %{_qt6_libdir}/cmake/Qt6QDocCatchGeneratorsPrivate
 %{_qt6_libdir}/cmake/Qt6QDocCatchGeneratorsPrivate/*.cmake
-%dir %{_qt6_libdir}/cmake/Qt6Help/
-%{_qt6_libdir}/cmake/Qt6Help/*.cmake
+#%%dir %{_qt6_libdir}/cmake/Qt6Help/
+#%%{_qt6_libdir}/cmake/Qt6Help/*.cmake
 %dir %{_qt6_libdir}/cmake/Qt6Linguist
 %{_qt6_libdir}/cmake/Qt6Linguist/*.cmake
 %dir %{_qt6_libdir}/cmake/Qt6LinguistTools
