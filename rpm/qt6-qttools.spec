@@ -351,7 +351,7 @@ popd
 
 %files static
 %{_qt6_libdir}/libQt6Designer*.prl
-%{_qt6_libdir}/libQt6Help.prl
+#%%{_qt6_libdir}/libQt6Help.prl
 %{_qt6_libdir}/libQt6UiTools.prl
 
 %if 0%{?examples}
