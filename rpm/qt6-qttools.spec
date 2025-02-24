@@ -141,7 +141,7 @@ Requires: %{name}-common = %{version}-%{release}
 %endif
 
 %prep
-%setup -n %{name}-%{version}/upstream
+%setup -q -n %{name}-%{version}/upstream
 
 %patch -P1 -p1 -b .run-qttools-with-qt6-suffix
 %ifarch %{mips32}
