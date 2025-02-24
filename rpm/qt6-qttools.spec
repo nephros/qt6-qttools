@@ -68,7 +68,7 @@ Summary: Development files for %{name}
 Requires: %{name} = %{version}-%{release}
 Requires: %{name}-libs-designer%{?_isa} = %{version}-%{release}
 Requires: %{name}-libs-designercomponents%{?_isa} = %{version}-%{release}
-Requires: %{name}-libs-help%{?_isa} = %{version}-%{release}
+#Requires: %%{name}-libs-help%%{?_isa} = %%{version}-%%{release}
 Requires: qt6-doctools = %{version}-%{release}
 Requires: qt6-designer = %{version}-%{release}
 Requires: qt6-linguist = %{version}-%{release}
@@ -94,11 +94,11 @@ Requires: %{name}-common = %{version}-%{release}
 %description libs-designercomponents
 %{summary}.
 
-%package libs-help
-Summary: Qt6 Help runtime library
-Requires: %{name}-common = %{version}-%{release}
-%description libs-help
-%{summary}.
+#%%package libs-help
+#Summary: Qt6 Help runtime library
+#Requires: %%{name}-common = %%{version}-%%{release}
+#%%description libs-help
+#%%{summary}.
 
 #%%package -n qt6-assistant
 #Summary: Documentation browser for Qt6
@@ -164,7 +164,8 @@ Requires: %{name}-common = %{version}-%{release}
 desktop-file-install \
   --dir=%{buildroot}%{_datadir}/applications \
   --vendor="qt6" \
-  %{SOURCE20} %{SOURCE21} %{SOURCE22} %{SOURCE23}
+  %{SOURCE21} %{SOURCE22} %{SOURCE23}
+#  %%{SOURCE20} %%{SOURCE21} %%{SOURCE22} %%{SOURCE23}
 
 %if 0%{?metainfo}
 install -Dm0644 -t %{buildroot}%{_metainfodir} \
@@ -234,8 +235,8 @@ popd
 %files  libs-designercomponents
 %{_qt6_libdir}/libQt6DesignerComponents.so.6*
 
-%files  libs-help
-%{_qt6_libdir}/libQt6Help.so.6*
+#%%files  libs-help
+#%%{_qt6_libdir}/libQt6Help.so.6*
 
 #%%files -n qt6-assistant
 #%%{_bindir}/assistant-qt6
@@ -248,7 +249,7 @@ popd
 #{_qt6_bindir}/qdoc*
 %{_bindir}/qdistancefieldgenerator*
 %{_qt6_bindir}/qdistancefieldgenerator*
-%{_qt6_libexecdir}/qhelpgenerator*
+#%%{_qt6_libexecdir}/qhelpgenerator*
 %{_qt6_libexecdir}/qtattributionsscanner*
 
 %files -n qt6-designer
@@ -302,12 +303,12 @@ popd
 %{_qt6_headerdir}/QtQDocCatchGenerators/
 %{_qt6_headerdir}/QtDesigner/
 %{_qt6_headerdir}/QtDesignerComponents/
-%{_qt6_headerdir}/QtHelp/
+#%%{_qt6_headerdir}/QtHelp/
 %{_qt6_headerdir}/QtUiPlugin
 %{_qt6_headerdir}/QtUiTools/
 %{_qt6_headerdir}/QtTools/
 %{_qt6_libdir}/libQt6Designer*.so
-%{_qt6_libdir}/libQt6Help.so
+#%%{_qt6_libdir}/libQt6Help.so
 %{_qt6_libdir}/libQt6UiTools.so
 %{_qt6_libdir}/cmake/Qt6/FindWrapLibClang.cmake
 %{_qt6_libdir}/cmake/Qt6BuildInternals/StandaloneTests/QtToolsTestsConfig.cmake
@@ -319,8 +320,8 @@ popd
 %{_qt6_libdir}/cmake/Qt6QDocCatchConversionsPrivate/*.cmake
 %dir %{_qt6_libdir}/cmake/Qt6QDocCatchGeneratorsPrivate
 %{_qt6_libdir}/cmake/Qt6QDocCatchGeneratorsPrivate/*.cmake
-%dir %{_qt6_libdir}/cmake/Qt6Help/
-%{_qt6_libdir}/cmake/Qt6Help/*.cmake
+#%%dir %%{_qt6_libdir}/cmake/Qt6Help/
+#%%{_qt6_libdir}/cmake/Qt6Help/*.cmake
 %dir %{_qt6_libdir}/cmake/Qt6Linguist
 %{_qt6_libdir}/cmake/Qt6Linguist/*.cmake
 %dir %{_qt6_libdir}/cmake/Qt6LinguistTools
@@ -338,8 +339,8 @@ popd
 %{_qt6_archdatadir}/mkspecs/modules/qt_lib_designer.pri
 %{_qt6_archdatadir}/mkspecs/modules/qt_lib_designer_private.pri
 %{_qt6_archdatadir}/mkspecs/modules/qt_lib_designercomponents_private.pri
-%{_qt6_archdatadir}/mkspecs/modules/qt_lib_help.pri
-%{_qt6_archdatadir}/mkspecs/modules/qt_lib_help_private.pri
+#%%{_qt6_archdatadir}/mkspecs/modules/qt_lib_help.pri
+#%%{_qt6_archdatadir}/mkspecs/modules/qt_lib_help_private.pri
 %{_qt6_archdatadir}/mkspecs/modules/qt_lib_linguist.pri
 %{_qt6_archdatadir}/mkspecs/modules/qt_lib_tools_private.pri
 %{_qt6_archdatadir}/mkspecs/modules/qt_lib_uiplugin.pri
@@ -351,7 +352,7 @@ popd
 
 %files static
 %{_qt6_libdir}/libQt6Designer*.prl
-%{_qt6_libdir}/libQt6Help.prl
+#%%{_qt6_libdir}/libQt6Help.prl
 %{_qt6_libdir}/libQt6UiTools.prl
 
 %if 0%{?examples}
