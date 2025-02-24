@@ -39,6 +39,7 @@ Source33: io.qt.qdbusviewer.metainfo.xml
 
 BuildRequires: cmake
 BuildRequires: ninja
+BuildRequires: clang
 BuildRequires: desktop-file-utils
 #BuildRequires: libappstream-glib
 BuildRequires: qt6-rpm-macros >= %{qt_version}
