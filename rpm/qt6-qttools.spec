@@ -151,7 +151,8 @@ Requires: %{name}-common = %{version}-%{release}
 %build
 %cmake_qt6 \
   -DQT_BUILD_EXAMPLES:BOOL=%{?examples:ON}%{!?examples:OFF} \
-  -DQT_INSTALL_EXAMPLES_SOURCES=%{?examples:ON}%{!?examples:OFF}
+  -DQT_INSTALL_EXAMPLES_SOURCES=%{?examples:ON}%{!?examples:OFF} \
+  -DQT_FEATURE_assistant:BOOL=OFF
 
 %cmake_build
 
