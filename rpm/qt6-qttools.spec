@@ -248,7 +248,7 @@ popd
 #{_qt6_bindir}/qdoc*
 %{_bindir}/qdistancefieldgenerator*
 %{_qt6_bindir}/qdistancefieldgenerator*
-%{_qt6_libexecdir}/qhelpgenerator*
+#%%{_qt6_libexecdir}/qhelpgenerator*
 %{_qt6_libexecdir}/qtattributionsscanner*
 
 %files -n qt6-designer
