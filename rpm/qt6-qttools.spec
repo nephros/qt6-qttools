@@ -100,11 +100,11 @@ Requires: %{name}-common = %{version}-%{release}
 %description libs-help
 %{summary}.
 
-%package -n qt6-assistant
-Summary: Documentation browser for Qt6
-Requires: %{name}-common = %{version}-%{release}
-%description -n qt6-assistant
-%{summary}.
+#%%package -n qt6-assistant
+#Summary: Documentation browser for Qt6
+#Requires: %%{name}-common = %%{version}-%%{release}
+#%%description -n qt6-assistant
+#%%{summary}.
 
 %package -n qt6-designer
 Summary: Design GUIs for Qt6 applications
@@ -173,8 +173,8 @@ appstream-util validate-relax --nonet %{buildroot}%{_metainfodir}/*.xml
 %endif
 
 # icons
-install -m644 -p -D src/assistant/assistant/images/assistant.png %{buildroot}%{_datadir}/icons/hicolor/32x32/apps/assistant-qt6.png
-install -m644 -p -D src/assistant/assistant/images/assistant-128.png %{buildroot}%{_datadir}/icons/hicolor/128x128/apps/assistant-qt6.png
+#install -m644 -p -D src/assistant/assistant/images/assistant.png %%{buildroot}%%{_datadir}/icons/hicolor/32x32/apps/assistant-qt6.png
+#install -m644 -p -D src/assistant/assistant/images/assistant-128.png %%{buildroot}%%{_datadir}/icons/hicolor/128x128/apps/assistant-qt6.png
 install -m644 -p -D src/designer/src/designer/images/designer.png %{buildroot}%{_datadir}/icons/hicolor/128x128/apps/designer-qt6.png
 install -m644 -p -D src/qdbus/qdbusviewer/images/qdbusviewer.png %{buildroot}%{_datadir}/icons/hicolor/32x32/apps/qdbusviewer-qt6.png
 install -m644 -p -D src/qdbus/qdbusviewer/images/qdbusviewer-128.png %{buildroot}%{_datadir}/icons/hicolor/128x128/apps/qdbusviewer-qt6.png
@@ -237,11 +237,11 @@ popd
 %files  libs-help
 %{_qt6_libdir}/libQt6Help.so.6*
 
-%files -n qt6-assistant
-%{_bindir}/assistant-qt6
-%{_qt6_bindir}/assistant*
-%{_datadir}/applications/*assistant.desktop
-%{_datadir}/icons/hicolor/*/apps/assistant*.*
+#%%files -n qt6-assistant
+#%%{_bindir}/assistant-qt6
+#%%{_qt6_bindir}/assistant*
+#%%{_datadir}/applications/*assistant.desktop
+#%%{_datadir}/icons/hicolor/*/apps/assistant*.*
 
 %files -n qt6-doctools
 #{_bindir}/qdoc*
