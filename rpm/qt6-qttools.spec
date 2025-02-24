@@ -164,7 +164,8 @@ Requires: %{name}-common = %{version}-%{release}
 desktop-file-install \
   --dir=%{buildroot}%{_datadir}/applications \
   --vendor="qt6" \
-  %{SOURCE20} %{SOURCE21} %{SOURCE22} %{SOURCE23}
+  %{SOURCE21} %{SOURCE22} %{SOURCE23}
+#  %%{SOURCE20} %%{SOURCE21} %%{SOURCE22} %%{SOURCE23}
 
 %if 0%{?metainfo}
 install -Dm0644 -t %{buildroot}%{_metainfodir} \
