@@ -5,6 +5,8 @@
 %global prerelease rc2
 %endif
 
+%bcond_with vulkan
+
 #global examples 1
 # disable once Qt7 is stable and providing the apps
 #global metainfo 1
@@ -50,6 +52,11 @@ BuildRequires: qt6-qtdeclarative >= %{qt_version}
 %{?_qt6:Requires: %{_qt6}%{?_isa} = %{_qt6_version}}
 #BuildRequires: clang-devel llvm-devel clang-tools-extra-devel
 BuildRequires: libzstd-devel
+
+%if %{with vulkan}
+BuildRequires: vulkan-headers
+%endif
+
 
 Requires: %{name}-common = %{version}-%{release}
 
@@ -152,7 +159,11 @@ Requires: %{name}-common = %{version}-%{release}
 %cmake_qt6 \
   -DQT_BUILD_EXAMPLES:BOOL=%{?examples:ON}%{!?examples:OFF} \
   -DQT_INSTALL_EXAMPLES_SOURCES=%{?examples:ON}%{!?examples:OFF} \
-  -DQT_FEATURE_assistant:BOOL=OFF
+  -DQT_FEATURE_assistant:BOOL=OFF \
+%if %{with vulkan}
+  -DQT_FEATURE_vulkan=ON \
+%endif
+  %{nil}
 
 %cmake_build
 
