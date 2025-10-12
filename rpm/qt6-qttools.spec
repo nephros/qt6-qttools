@@ -22,6 +22,9 @@ Source0: %{name}-%{version}.tar.bz2
 # https://bugzilla.redhat.com/show_bug.cgi?id=1009893
 Patch1: qttools-run-qttools-with-qt6-suffix.patch
 
+# 32-bit MIPS needs explicit -latomic
+Patch2: qttools-add-libatomic.patch
+
 ## upstream patches
 
 Source20: assistant.desktop
@@ -138,7 +141,12 @@ Requires: %{name}-common = %{version}-%{release}
 %endif
 
 %prep
-%autosetup -n %{name}-%{version}/upstream -p1
+%setup -q -n %{name}-%{version}/upstream
+
+%patch -P1 -p1 -b .run-qttools-with-qt6-suffix
+%ifarch %{mips32}
+%patch -P2 -p1 -b .libatomic
+%endif
 
 %build
 %cmake_qt6 \
