@@ -17,6 +17,7 @@ Release: 3%{?dist}
 License: LGPL-3.0-only OR GPL-3.0-only WITH Qt-GPL-exception-1.0
 Url:     http://www.qt.io
 Source0: %{name}-%{version}.tar.bz2
+Patch0:  0001-fix-build-nocursor.patch
 
 # help lrelease/lupdate use/prefer qmake-qt6
 # https://bugzilla.redhat.com/show_bug.cgi?id=1009893
