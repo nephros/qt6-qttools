@@ -23,9 +23,6 @@ Patch0:  0001-fix-build-nocursor.patch
 # https://bugzilla.redhat.com/show_bug.cgi?id=1009893
 Patch1: qttools-run-qttools-with-qt6-suffix.patch
 
-# 32-bit MIPS needs explicit -latomic
-Patch2: qttools-add-libatomic.patch
-
 ## upstream patches
 
 Source20: assistant.desktop
@@ -142,12 +139,7 @@ Requires: %{name}-common = %{version}-%{release}
 %endif
 
 %prep
-%setup -q -n %{name}-%{version}/upstream
-
-%patch -P1 -p1 -b .run-qttools-with-qt6-suffix
-%ifarch %{mips32}
-%patch -P2 -p1 -b .libatomic
-%endif
+%autosetup -n %{name}-%{version}/upstream -p1
 
 %build
 %cmake_qt6 \
