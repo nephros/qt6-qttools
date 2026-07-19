@@ -1,4 +1,4 @@
-%global  qt_version 6.7.2
+%global qt_version 6.8.4
 
 #global unstable 1
 %if 0%{?unstable}
@@ -11,7 +11,7 @@
 
 Summary: Qt6 - QtTool components
 Name:    qt6-qttools
-Version: 6.8.3
+Version: 6.8.4
 Release: 3%{?dist}
 
 License: LGPL-3.0-only OR GPL-3.0-only WITH Qt-GPL-exception-1.0
